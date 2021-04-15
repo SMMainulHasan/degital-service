@@ -1,47 +1,18 @@
 import React from 'react';
 import './HeaderMain.css';
-import TechnicalSupport from '../../../Image_Icon/Image/technical-support.svg'
+import Dream from '../../../Image_Icon/Image/dream.svg'
 
 const HeaderMain = () => {
     return (
-        <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src={TechnicalSupport} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
+            <main className="row d-flex align-items-center banner">
+                <div className="col-md-5 offset-1 tag-line">
+                    <h1>DIGITAL SERVICES <br /> MAKES <br /> DREAMS COME TRUE</h1>
+                    <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></p>
                 </div>
-                <div className="carousel-item">
-                    <img src="..." className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
+                <div className="col-md-6 banner-image">
+                    <img src={Dream} alt="Technical Support" />
                 </div>
-                <div className="carousel-item">
-                    <img src="..." className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
+            </main>
     );
 };
 
