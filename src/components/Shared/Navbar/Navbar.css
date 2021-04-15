@@ -1,0 +1,21 @@
+/* =======
+    Logo
+   ======= */
+.logo-first,
+.logo-last{
+    font-size: 35px;
+    font-weight: 600;
+}
+.logo-first{
+    color: #2596be;
+}
+.logo-last{
+    color: #eeeee4;
+}
+/* ===========
+    Nav links
+   ===========*/
+.nav-link-lists li a{
+    font-size: 20px;
+    color: white !important;
+}
