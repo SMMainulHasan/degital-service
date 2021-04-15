@@ -1,0 +1,16 @@
+.work-img{
+    width: 350px;
+
+}
+.project-card{
+    overflow: hidden;
+    margin: 30px;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px;
+    background-color: #eeeee4;
+    box-shadow: 10px 10px 30px gray;
+}
+.card-info{
+    padding: 10px;
+}
