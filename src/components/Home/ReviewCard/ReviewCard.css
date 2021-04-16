@@ -1,0 +1,11 @@
+.review-card{
+    padding: 20px;
+    width: 250px;
+    height: 350px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+.review-card img{
+    width: 50px;
+    border-radius: 50%;
+}
