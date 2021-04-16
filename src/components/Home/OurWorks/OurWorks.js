@@ -10,13 +10,8 @@ import OurWorkCard from '../OurWorkCard/OurWorkCard';
 
 
 const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-    },
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
+        breakpoint: { max: 4000, min: 1024 },
         items: 3
     },
     tablet: {
@@ -24,7 +19,7 @@ const responsive = {
         items: 2
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: { max: 600, min: 0 },
         items: 1
     }
 };
@@ -60,7 +55,15 @@ const OurWorks = () => {
             <h5 className="text-color-primary text-center">Our Works</h5>
             <h2 className="text-color-primary fw-bold text-center">We build our project with love</h2>
             <div className="card-container">
-                <Carousel responsive={responsive}>
+                <Carousel 
+                swipeable={true}
+                draggable={true}
+                showDots={true}
+                autoPlay={true}
+                infinite={true}
+                autoPlaySpeed={3000}
+                transitionDuration={1500}
+                responsive={responsive}>
                     {
                         ourWorkData.map(cardData => <OurWorkCard cardData={cardData}></OurWorkCard>)
                     }

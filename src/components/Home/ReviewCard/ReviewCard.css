@@ -1,11 +1,19 @@
 .review-card{
+    margin: 20px;
     padding: 20px;
     width: 250px;
     height: 350px;
-    background-color: lightblue;
+    background-color: white;
     border-radius: 10px;
 }
 .review-card img{
+    height: 50px;
     width: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid lightblue;
     border-radius: 50%;
+}
+.review-card h5{
+    font-weight: 600;
 }

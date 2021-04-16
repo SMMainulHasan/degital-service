@@ -9,20 +9,15 @@ const Testimonials = () => {
 
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
+            breakpoint: { max: 4000, min: 0 },
             items: 3
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 900, min: 0 },
             items: 2
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 600, min: 0 },
             items: 1
         }
     };
@@ -57,13 +52,24 @@ const Testimonials = () => {
 
 
     return (
-        <div>
-            <Carousel responsive={responsive}>
+        <section className="testimonials">
+            <h2 className="text-center text-color-primary">Testimonials</h2>
+            <Carousel
+                className="container testimonials-container"
+                swipeable={true}
+                draggable={true}
+                showDots={true}
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                autoPlay={true}
+                infinite={true}
+                autoPlaySpeed={3000}
+                transitionDuration={1500}
+                responsive={responsive}>
                 {
                     reviews.map(reviewData => <ReviewCard reviewData={reviewData}></ReviewCard>)
                 }
             </Carousel>
-        </div>
+        </section>
     );
 };
 

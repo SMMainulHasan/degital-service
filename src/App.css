@@ -7,3 +7,6 @@
 .text-color-primary{
   color: #3f3d56;
 }
+p{
+  opacity: .7;
+}
