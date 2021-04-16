@@ -1,0 +1,33 @@
+.service-card img{
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
+.service-card img:hover{
+    height: 150px;
+    width: 200px;
+    margin: 0 auto;
+    
+}
+.service-card{
+    background-color: white;
+    box-shadow: 5px 8px 15px gray;
+    border-radius: 10px;
+    width: 280px;
+    margin: 20px 15px;
+}
+.service-card:hover{
+    border: 1px solid #2596be;
+    box-shadow: 5px 8px 15px #2596be;
+    
+}
+.service-card p{
+    padding: 0 20px 20px 20px;
+    opacity: .7;
+}
+.service-card:active{
+    border: 1px solid #253cbe;
+    box-shadow: 5px 8px 15px #253cbe;
+    
+}

@@ -1,9 +1,11 @@
 .services{
     padding-top: 20px;
-    height: 600px;
     width: 100%;
     background-color:#eeeee4;
 }
 .services h3{
     text-align: center;
+}
+.services-container{
+    width: 100%;
 }

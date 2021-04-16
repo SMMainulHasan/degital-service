@@ -38,12 +38,12 @@ const ourWorkData = [
         detail: "Lorem ipsum dolor sit amet."
     },
     {
-        image: Work2,
+        image: Work3,
         title: "Lorem ipsum dolor",
         detail: "Lorem ipsum dolor sit amet."
     },
     {
-        image: Work3,
+        image: Work2,
         title: "Lorem ipsum dolor",
         detail: "Lorem ipsum dolor sit amet."
     },
