@@ -42,8 +42,13 @@ const OurClient = () => {
     ]
 
     return (
-        <div>
-
+        <div className="container clients-container">
+            <h4 className="text-center text-color-primary">Our clients</h4>
+            <div className="master d-flex justify-content-center">
+                {
+                    ourClientList.map( img => <img src={img.badge} alt="" />)
+                }
+            </div>
         </div>
     );
 };

@@ -1,0 +1,11 @@
+.clients-container{
+    margin-top: 40px;
+}
+.clients-container img{
+    overflow: scroll;
+    margin: 20px 15px;
+    width: 100px;
+}
+.master{
+    width: 100%;
+}
