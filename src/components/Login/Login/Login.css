@@ -1,0 +1,20 @@
+.login{
+    height: 100vh;
+    background-color: lightblue;
+}
+.google-btn{
+    margin-top: 35vh;
+    width: 350px;
+    padding: 10px 15px;
+    background-color: #464850;
+    border-radius: 50vh;
+}
+.google-btn:hover{
+    padding: 12px 17px;
+}
+.google-btn:active{
+    padding: 8px 13px;
+}
+.google-btn img{
+    width: 50px;
+}

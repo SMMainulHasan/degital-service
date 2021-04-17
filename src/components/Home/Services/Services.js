@@ -9,25 +9,29 @@ import ServiceCard from '../ServiceCard/ServiceCard';
 const Services = () => {
 
     const servicesData = [
-        {
+        {   
+            serviceId: 1234,
             image: WebDevelopment ,
             title: "Website Development",
             price: "$400",
             detail: "Web Development consists of two segments front end development and backend development."
         },
-        {
+        {   
+            serviceId: 1235,
             image: AppDevelopment,
             title: "App Development",
             price: "$1000",
             detail: "With the world going mobile, the importance of apps is increasing by the day. App development hence refers to the creation of applications to be used on mobile devices."
         },
-        {
+        {   
+            serviceId: 1236,
             image: UiDesigning,
             title: "UI/UX Designing",
             price: "$250",
             detail: "This course UX & UI Design is designed for those people, who wants to design anything to keep users on first priority and working on to make them happy."
         },
-        {
+        {   
+            serviceId: 1237,
             image: GraphicDesign,
             title: "Graphic Designing",
             price: "$300",
@@ -41,7 +45,7 @@ const Services = () => {
             <h3 className="text-color-primary text-center">WE DESIGN DIGITAL PRODUCTS THAT <br /> HELP GROW BUSINESSES.</h3>
             <div className= "row justify-content-center services-container">
                 {
-                    servicesData.map(service => <ServiceCard service={service}></ServiceCard>)
+                    servicesData.map(service => <ServiceCard service={service} key={service.serviceId}></ServiceCard>)
                 }
             </div>
         </section>
