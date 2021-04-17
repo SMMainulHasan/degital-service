@@ -1,0 +1,9 @@
+.sidebar{
+    background-color: lightblue ;
+    height: 100vh;
+}
+.profile-pic{
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #2596be;
+}

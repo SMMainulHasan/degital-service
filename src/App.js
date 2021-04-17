@@ -7,7 +7,9 @@ import {
 import Home from './components/Home/Home/Home';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Login from './components/Login/Login/Login';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
+import OrderCheckout from './components/Dashboard/OrderCheckout/OrderCheckout';
 
 export const userContext = createContext();
 
@@ -26,6 +28,9 @@ function App() {
         <Route path="/login">
           <Login></Login>
         </Route>
+        <PrivateRoute path="/order-checkout/:id">
+          <OrderCheckout></OrderCheckout>
+        </PrivateRoute>
         <Route path="*">
           <PageNotFound></PageNotFound>
         </Route>

@@ -15,7 +15,6 @@ if (!firebase.apps.length) {
 }
 const Login = () => {
     const [user, setUser] = useContext(userContext);
-    console.log(user);
     const location = useLocation();
     const history = useHistory();
 
