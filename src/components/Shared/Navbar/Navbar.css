@@ -19,3 +19,17 @@
     font-size: 20px;
     color: #eeeee4 !important;
 }
+.button{
+    border-radius: 5px;
+    background-image: linear-gradient(90deg, #2596be, #3aaed8);
+}
+.button:focus{
+    border: 2px solid white;
+}
+
+.nav-link-lists img{
+    height: 7vh;
+    width: 7vh;
+    border: 4px solid #2596be;
+    border-radius: 50%;
+}

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import { userContext } from '../../../App';
+import Profile from '../../../Image_Icon/Icon/profile.png'
 
 const Navbar = () => {
+    const [user, setUser] = useContext(userContext);
+    const logout = () => {
+        setUser({})
+    }
     return (
         <nav className="container navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
@@ -15,20 +21,25 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-link-lists">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link me-3 active" aria-current="page">Home</Link>
+                            <Link to="/" className="nav-link me-3 active" >Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/about-us" className="nav-link me-3 active" aria-current="page">About Us</Link>
+                            <Link to="/about-us" className="nav-link me-3 active">About Us</Link>
                         </li>
                         <li>
-                            <Link to="/projects" className="nav-link me-3 active" aria-current="page">Projects</Link>
+                            <Link to="/projects" className="nav-link me-3 active" >Projects</Link>
                         </li>
                         <li>
-                            <Link to="/admin" className="nav-link me-3 active" aria-current="page">Contact</Link>
+                            <Link to="/admin" className="nav-link me-3 active" >Contact</Link>
                         </li>
                         <li>
-                            <Link to="/admin" className="nav-link me-3 active" aria-current="page">Admin</Link>
+                            <Link to="/admin" className="nav-link me-3 active" >Admin</Link>
                         </li>
+                        {
+                            user.email ? <li><Link to="/login" className="nav-link me-3 active button" onClick={logout}>Logout</Link></li>
+                                : <li><Link to="/login" className="nav-link me-3 active button">Login</Link></li>
+                        }
+                        <img src={user.displayPic || Profile} alt="" />
                     </ul>
                 </div>
             </div>

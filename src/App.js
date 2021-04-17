@@ -12,7 +12,7 @@ import { createContext, useState } from 'react';
 export const userContext = createContext();
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({ name: "", email: "", displayPic: "" });
 
   
   return (
