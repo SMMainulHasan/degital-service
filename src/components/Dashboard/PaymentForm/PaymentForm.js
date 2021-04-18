@@ -35,7 +35,7 @@ const PaymentForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <CardElement />
-      <button type="submit" disabled={!stripe}>
+      <button className="px-5 py-1 mt-3 button" type="submit" disabled={!stripe}>
         Pay
       </button>
     </form>

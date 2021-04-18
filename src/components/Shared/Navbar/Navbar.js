@@ -33,7 +33,7 @@ const Navbar = () => {
                             <Link to="/admin" className="nav-link me-3 active" >Contact</Link>
                         </li>
                         <li>
-                            <Link to="/order-checkout" className="nav-link me-3 active" >Dashboard</Link>
+                            <Link to="/orders" className="nav-link me-3 active" >Dashboard</Link>
                         </li>
                         {
                             user.email ? <li><Link to="/login" className="nav-link me-3 active button" onClick={logout}>Logout</Link></li>

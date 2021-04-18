@@ -1,8 +1,9 @@
-.order-checkout{
-    background-color: #2596be;
+.dash-right-side{
+    background-color: white;
     padding-left: 0;
 }
-.order-checkout h2{
+.dash-right-side h2{
     width: 100%;
-    background-color: lightblue;
+    color: white;
+    background-color: #3f3d56;
 }

@@ -4,7 +4,7 @@ import './OrderCheckout.css';
 import { useForm } from "react-hook-form";
 import { userContext } from '../../../App';
 import { useParams } from 'react-router';
-import { CardElement, Elements } from '@stripe/react-stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentForm from '../PaymentForm/PaymentForm';
 
@@ -14,9 +14,9 @@ const stripePromise = loadStripe('pk_test_51IeRveCVrzPFzcO97vW3z1PGtQJVCyG9uXBcy
 const OrderCheckout = () => {
     const [user] = useContext(userContext);
     const { id } = useParams();
-    // useEffect( () => {
-    //     fetch('')
-    // }, [])
+    useEffect( () => {
+        fetch('')
+    }, [])
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -24,7 +24,7 @@ const OrderCheckout = () => {
     return (
         <div className="row">
             <Sidebar></Sidebar>
-            <div className="col-9 order-checkout">
+            <div className="col-9 dash-right-side">
                 <h2 className="pt-5 ps-5">order checkout</h2>
                 <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="name">Name:</label> <br />
@@ -36,7 +36,7 @@ const OrderCheckout = () => {
                     {errors.exampleRequired && <span>This field is required</span>} <br />
                     <input type="submit" />
                 </form>
-                <div className="ps-5 ">
+                <div className="ps-5 me-5 ">
                     <Elements stripe={stripePromise}>
                         <PaymentForm></PaymentForm>
                     </Elements>

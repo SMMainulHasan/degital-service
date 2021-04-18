@@ -10,32 +10,40 @@ import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
 import OrderCheckout from './components/Dashboard/OrderCheckout/OrderCheckout';
+import Orders from './components/Dashboard/Orders/Orders';
+import Review from './components/Dashboard/Review/Review';
 
 export const userContext = createContext();
 
 function App() {
   const [user, setUser] = useState({ name: "", email: "", displayPic: "" });
 
-  
+
   return (
 
     <userContext.Provider value={[user, setUser]}>
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        <PrivateRoute path="/order-checkout/:id">
-          <OrderCheckout></OrderCheckout>
-        </PrivateRoute>
-        <Route path="*">
-          <PageNotFound></PageNotFound>
-        </Route>
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <PrivateRoute path="/orders">
+            <Orders></Orders>
+          </PrivateRoute>
+          <PrivateRoute path="/review">
+            <Review></Review>
+          </PrivateRoute>
+          <PrivateRoute path="/dash-right-side/:id">
+            <OrderCheckout></OrderCheckout>
+          </PrivateRoute>
+          <Route path="*">
+            <PageNotFound></PageNotFound>
+          </Route>
+        </Switch>
+      </Router>
     </userContext.Provider>
   );
 }
