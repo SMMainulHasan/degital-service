@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext} from 'react';
 import './Login.css'
 
 import Navbar from '../../Shared/Navbar/Navbar';
@@ -34,7 +34,6 @@ const Login = () => {
                 .then(res => res.json())
                 .then(data => {
                     setUser({ name: displayName, email: email, displayPic: photoURL, role: data.admin })
-                    console.log(user)
                 })
                 history.replace(from);
             }).catch((error) => {

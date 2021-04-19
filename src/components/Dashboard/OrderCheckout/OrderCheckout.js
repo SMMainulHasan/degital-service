@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import './OrderCheckout.css';
 import { useForm } from "react-hook-form";
@@ -13,13 +13,38 @@ const stripePromise = loadStripe('pk_test_51IeRveCVrzPFzcO97vW3z1PGtQJVCyG9uXBcy
 
 const OrderCheckout = () => {
     const [user] = useContext(userContext);
+    const [serviceDetail, setServiceDetail] = useState();
     const { id } = useParams();
-    useEffect( () => {
-        fetch('')
-    }, [])
+    useEffect(() => {
+        fetch(`http://localhost:8080/getServices/${id}`)
+            .then(res => res.json())
+            .then(data => setServiceDetail(data))
+    }, [id])
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        const newOrder= { ...user, ...data,  serviceDetail, status: "Pending"}
+
+        fetch('http://localhost:8080/addOrder', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newOrder)
+            }).then(res => {
+                if (res.status === 200) {
+                    window.alert('Order successfully!')
+                    reset();
+                }
+                else {
+                    window.alert('Sorry try again!')
+                }
+            });
+    };
+
+
+
 
     return (
         <div className="row">
@@ -28,13 +53,12 @@ const OrderCheckout = () => {
                 <h2 className="pt-5 ps-5">order checkout</h2>
                 <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="name">Name:</label> <br />
-                    <input defaultValue={user.name} className="form-control" {...register("example")} /> <br />
+                    <input defaultValue={user.name} className="form-control" {...register("name")} /> <br />
                     <label htmlFor="email">Email:</label> <br />
-                    <input defaultValue={user.email} className="form-control" {...register("exampleRequired", { required: true })} /> <br />
+                    <input defaultValue={user.email} className="form-control" {...register("email", { required: true })} /> <br />
                     <label htmlFor="email">Service:</label> <br />
-                    <input defaultValue={id} className="form-control" {...register("exampleRequired", { required: true })} /> <br />
-                    {errors.exampleRequired && <span>This field is required</span>} <br />
-                    <input type="submit" />
+                    <input defaultValue={serviceDetail?.title} disabled className="form-control" /> <br />
+                    <input className="form-control button" type="submit" value="Order Place" />
                 </form>
                 <div className="ps-5 me-5 ">
                     <Elements stripe={stripePromise}>
