@@ -2,12 +2,25 @@ import React from 'react';
 import './OrderedServiceCard.css';
 
 const OrderedServiceCard = ({orderedService}) => {
-    const { image, title, status, detail} = orderedService;
+    const {status, serviceDetail}=orderedService;
+    const { imageUrl, title, detail} = serviceDetail;
+
+    let style;
+    if (status === "Pending") {
+       style = { backgroundColor: "red" }
+    }
+    if (status === "Processing") {
+       style = { backgroundColor: "yellow" }
+    }
+    if (status === "Done") {
+       style = { backgroundColor: "green" }
+    }
+
     return (
-        <div className="OrderedServiceCard" >
+        <div className="OrderedServiceCard " >
             <div className="d-flex justify-content-between top-part">
-                <img src={image} alt=""/>
-                <p className="status text-center"><strong>{status}</strong></p>
+                <img src={imageUrl} alt=""/>
+                <p className="status text-center" style={style}><strong>{status}</strong></p>
             </div>
             <div className="detail">
                 <h4>{title}</h4>

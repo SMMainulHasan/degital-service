@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { userContext } from '../../../App';
+import OrderedServiceCard from '../OrderedServiceCard/OrderedServiceCard';
 import Sidebar from '../Sidebar/Sidebar';
 
 const Orders = () => {
-
-
+    const [user] = useContext(userContext);
+    const [orderedList, setOrderedList] = useState()
+    console.log(orderedList);
+    useEffect( ()=> {
+        fetch(`http://localhost:8080/getMyOrders?email=${user.email}`)
+        .then(res=> res.json())
+        .then(data=> setOrderedList(data))
+    }, [user.email])
 
     
     return (
@@ -13,7 +21,7 @@ const Orders = () => {
                 <h2 className="pt-5 ps-5">Orders</h2>
                 <div className="pt-3 ps-5 order-list">
                     {
-                        
+                        orderedList?.map(order => <OrderedServiceCard orderedService={order}></OrderedServiceCard>)
                     }
                 </div>
             </div>

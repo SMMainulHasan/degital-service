@@ -34,8 +34,8 @@ const Login = () => {
                 .then(res => res.json())
                 .then(data => {
                     setUser({ name: displayName, email: email, displayPic: photoURL, role: data.admin })
+                    history.replace(from);
                 })
-                history.replace(from);
             }).catch((error) => {
                 // var errorCode = error.code;
             });
