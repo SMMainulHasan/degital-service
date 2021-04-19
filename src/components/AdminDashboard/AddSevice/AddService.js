@@ -11,7 +11,7 @@ const AddService = () => {
         let serviceData = { ...data, imageUrl }
 
         if (imageUrl) {
-            fetch('https://sheltered-reef-89819.herokuapp.com/addService', {
+            fetch('http://localhost:8080/addService', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -49,7 +49,7 @@ const AddService = () => {
         <div className=" row">
             <AdminSidebar></AdminSidebar>
             <div className="col-9 dash-right-side">
-                <h2 className="pt-5 ps-5">Orders</h2>
+                <h2 className="pt-5 ps-5">Add Service</h2>
                 <div className="pt-3 ps-5 order-list">
                     <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="name">Service Title:</label> <br />

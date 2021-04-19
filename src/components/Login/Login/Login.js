@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Login.css'
 
 import Navbar from '../../Shared/Navbar/Navbar';
@@ -15,6 +15,8 @@ if (!firebase.apps.length) {
 }
 const Login = () => {
     const [user, setUser] = useContext(userContext);
+    
+    
     const location = useLocation();
     const history = useHistory();
 
@@ -26,26 +28,34 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(googleProvider)
             .then((result) => {
-                // var credential = result.credential;
-                // var token = credential.accessToken;
                 const { photoURL, email, displayName } = result.user;
-                setUser({ name: displayName, email: email, displayPic: photoURL });
+                // setUser({ name: displayName, email: email, displayPic: photoURL });
+                fetch(`http://localhost:8080/getAdminRole?email=${email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setUser({ name: displayName, email: email, displayPic: photoURL, role: data.admin })
+                    console.log(user)
+                })
                 history.replace(from);
             }).catch((error) => {
                 // var errorCode = error.code;
-                // var errorMessage = error.message;
-                // var email = error.email;
-                // var credential = error.credential;
             });
     }
+
+    //Set user roll
+    // const setUserRole = () => {
+            
+    // }
+
+
     return (
         <div className="login">
             <Navbar />
             <div className="d-flex justify-content-center">
-            <div onClick={googleLogin} className="d-flex align-items-center google-btn">
-                <img src={google} alt="" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <div onClick={googleLogin} className="d-flex align-items-center google-btn">
+                    <img src={google} alt="" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <h4 className="text-white">Login with Google</h4>
-            </div>
+                </div>
             </div>
         </div>
     );

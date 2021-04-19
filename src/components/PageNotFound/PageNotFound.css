@@ -3,3 +3,7 @@
     text-align: center;
 
 }
+.not-found-container{
+    background-color: lightblue;
+    height: 100vh;
+}

@@ -36,6 +36,12 @@ const Navbar = () => {
                             <Link to="/orders" className="nav-link me-3 active" >Dashboard</Link>
                         </li>
                         {
+                            user.role &&
+                            <li>
+                                <Link to="/Add-service" className="nav-link me-3 active" >Admin</Link>
+                            </li>
+                        }
+                        {
                             user.email ? <li><Link to="/login" className="nav-link me-3 active button" onClick={logout}>Logout</Link></li>
                                 : <li><Link to="/login" className="nav-link me-3 active button">Login</Link></li>
                         }
