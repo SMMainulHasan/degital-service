@@ -9,8 +9,8 @@ const OrderedServiceCard = ({orderedService}) => {
     if (status === "Pending") {
        style = { backgroundColor: "red" }
     }
-    if (status === "Processing") {
-       style = { backgroundColor: "yellow" }
+    if (status === "Working on") {
+       style = { backgroundColor: "orange" }
     }
     if (status === "Done") {
        style = { backgroundColor: "green" }

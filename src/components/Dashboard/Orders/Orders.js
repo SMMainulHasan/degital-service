@@ -5,8 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Orders = () => {
     const [user] = useContext(userContext);
-    const [orderedList, setOrderedList] = useState()
-    console.log(orderedList);
+    const [orderedList, setOrderedList] = useState();
     useEffect( ()=> {
         fetch(`http://localhost:8080/getMyOrders?email=${user.email}`)
         .then(res=> res.json())
