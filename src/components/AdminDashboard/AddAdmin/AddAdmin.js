@@ -34,7 +34,7 @@ const AddAdmin = () => {
                     <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email">Email:</label> <br />
                         <input className="form-control" placeholder="Email" {...register("email", { required: true })} /> <br />
-                        <input className="form-control button px-5 py-1" type="submit" value="Add Service"/>
+                        <input className="form-control button px-5 py-1" type="submit" value="Add Admin"/>
                     </form>
                 </div>
             </div>

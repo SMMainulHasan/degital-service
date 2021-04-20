@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Testimonials.css';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import DameyImage from '../../../Image_Icon/Image/website.webp'
 import ReviewCard from '../ReviewCard/ReviewCard';
 
 const Testimonials = () => {
+    const [reviews, setReviews] = useState();
+    console.log(reviews);
+    useEffect(() => {
+        fetch('http://localhost:8080/getAllReviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, []);
+
 
     const responsive = {
         superLargeDesktop: {
@@ -22,53 +29,28 @@ const Testimonials = () => {
         }
     };
 
-    const reviews = [
-        {
-            image: DameyImage,
-            name: "khaled Uddin",
-            review: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, tenetur."
-        },
-        {
-            image: DameyImage,
-            name: "khaled Uddin",
-            review: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, tenetur."
-        },
-        {
-            image: DameyImage,
-            name: "khaled Uddin",
-            review: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, tenetur."
-        },
-        {
-            image: DameyImage,
-            name: "khaled Uddin",
-            review: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, tenetur."
-        },
-        {
-            image: DameyImage,
-            name: "khaled Uddin",
-            review: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, tenetur."
-        }
-    ]
 
 
     return (
         <section className="testimonials">
             <h2 className="text-center text-color-primary">Testimonials</h2>
-            <Carousel
-                className="container testimonials-container"
-                swipeable={true}
-                draggable={true}
-                showDots={true}
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                autoPlay={true}
-                infinite={true}
-                autoPlaySpeed={3000}
-                transitionDuration={1500}
-                responsive={responsive}>
-                {
-                    reviews.map(reviewData => <ReviewCard reviewData={reviewData}></ReviewCard>)
-                }
-            </Carousel>
+            {
+                reviews && <Carousel
+                    className="container testimonials-container"
+                    swipeable={true}
+                    draggable={true}
+                    showDots={true}
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    autoPlay={true}
+                    infinite={true}
+                    autoPlaySpeed={3000}
+                    transitionDuration={1500}
+                    responsive={responsive}>
+                    {
+                        reviews?.map(reviewData => <ReviewCard reviewData={reviewData}></ReviewCard>)
+                    }
+                </Carousel>
+            }
         </section>
     );
 };
