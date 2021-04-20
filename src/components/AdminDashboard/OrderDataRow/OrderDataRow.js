@@ -7,7 +7,7 @@ const OrderDataRow = ({ orderData }) => {
     const handleStatus = e => {
         const newStatus = e.target.value;
 
-        fetch(`http://localhost:8080/updateStatus/${_id}`, {
+        fetch(`https://sheltered-reef-89819.herokuapp.com/updateStatus/${_id}`, {
             method: 'PATCH',
             body: JSON.stringify({ status: newStatus }),
             headers: {

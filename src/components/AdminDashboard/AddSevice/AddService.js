@@ -11,7 +11,7 @@ const AddService = () => {
         let serviceData = { ...data, imageUrl }
 
         if (imageUrl) {
-            fetch('http://localhost:8080/addService', {
+            fetch('https://sheltered-reef-89819.herokuapp.com/addService', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

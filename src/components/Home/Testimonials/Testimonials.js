@@ -8,7 +8,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState();
     console.log(reviews);
     useEffect(() => {
-        fetch('http://localhost:8080/getAllReviews')
+        fetch('https://sheltered-reef-89819.herokuapp.com/getAllReviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);

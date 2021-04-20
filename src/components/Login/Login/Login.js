@@ -30,7 +30,7 @@ const Login = () => {
             .then((result) => {
                 const { photoURL, email, displayName } = result.user;
                 // setUser({ name: displayName, email: email, displayPic: photoURL });
-                fetch(`http://localhost:8080/getAdminRole?email=${email}`)
+                fetch(`https://sheltered-reef-89819.herokuapp.com/getAdminRole?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setUser({ name: displayName, email: email, displayPic: photoURL, role: data.admin })

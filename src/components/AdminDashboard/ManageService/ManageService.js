@@ -6,14 +6,14 @@ const ManageService = () => {
     const [servicesData, setServicesData] = useState([]);
     console.log(servicesData);
     useEffect(() => {
-        fetch('http://localhost:8080/getServices')
+        fetch('https://sheltered-reef-89819.herokuapp.com/getServices')
             .then(res => res.json())
             .then(data => setServicesData(data))
     }, [])
 
 //handle delete service
     const handleDelete = (id) => {
-        fetch(`http://localhost:8080/deleteService/${id}`, {
+        fetch(`https://sheltered-reef-89819.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

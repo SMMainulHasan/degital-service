@@ -16,7 +16,7 @@ const OrderCheckout = () => {
     const [serviceDetail, setServiceDetail] = useState();
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:8080/getServices/${id}`)
+        fetch(`https://sheltered-reef-89819.herokuapp.com/getServices/${id}`)
             .then(res => res.json())
             .then(data => setServiceDetail(data))
     }, [id])
@@ -26,7 +26,7 @@ const OrderCheckout = () => {
     const onSubmit = data => {
         const newOrder= { ...user, ...data,  serviceDetail, status: "Pending"}
 
-        fetch('http://localhost:8080/addOrder', {
+        fetch('https://sheltered-reef-89819.herokuapp.com/addOrder', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -6,7 +6,7 @@ const OrderListForAdmin = () => {
     const [orderedListForAdmin, setOrderedListForAdmin] = useState()
     console.log(orderedListForAdmin);
     useEffect(() => {
-        fetch('http://localhost:8080/getAllOrders')
+        fetch('https://sheltered-reef-89819.herokuapp.com/getAllOrders')
             .then(res => res.json())
             .then(data => setOrderedListForAdmin(data))
     }, [])

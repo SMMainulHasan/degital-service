@@ -9,7 +9,7 @@ const Review = () => {
 
     const onSubmit = data => {
         const newReview = {...data, ...user}
-        fetch('http://localhost:8080/addReview', {
+        fetch('https://sheltered-reef-89819.herokuapp.com/addReview', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

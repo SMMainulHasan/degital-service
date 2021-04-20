@@ -7,7 +7,7 @@ const AddAdmin = () => {
 
     const onSubmit = data => {
         const email = data
-        fetch('http://localhost:8080/addAdmin', {
+        fetch('https://sheltered-reef-89819.herokuapp.com/addAdmin', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
