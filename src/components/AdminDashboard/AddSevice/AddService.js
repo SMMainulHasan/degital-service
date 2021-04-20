@@ -50,7 +50,7 @@ const AddService = () => {
             <AdminSidebar></AdminSidebar>
             <div className="col-9 dash-right-side">
                 <h2 className="pt-5 ps-5">Add Service</h2>
-                <div className="pt-3 ps-5 order-list">
+                <div className="pt-3 ps-5 me-5 order-list">
                     <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="name">Service Title:</label> <br />
                         <input className="form-control" placeholder="Service title" {...register("title", { required: true })} /> <br />

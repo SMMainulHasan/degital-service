@@ -25,7 +25,7 @@ const AdminSidebar = () => {
                     <Link to="/manage-service">Manage Service</Link>
                 </li>
                 <li>
-                    <Link to="/add-admin">add Admin</Link>
+                    <Link to="/add-admin">Add Admin</Link>
                 </li>
             </ul>
         </div>

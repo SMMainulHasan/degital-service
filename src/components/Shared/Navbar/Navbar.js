@@ -38,7 +38,7 @@ const Navbar = () => {
                         {
                             user.role &&
                             <li>
-                                <Link to="/Add-service" className="nav-link me-3 active" >Admin</Link>
+                                <Link to="/order-list" className="nav-link me-3 active" >Admin</Link>
                             </li>
                         }
                         {

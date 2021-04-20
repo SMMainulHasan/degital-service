@@ -17,7 +17,7 @@ const OrderListForAdmin = () => {
             <AdminSidebar></AdminSidebar>
             <div className="col-9 dash-right-side">
                 <h2 className="pt-5 ps-5">All Orders</h2>
-                <div className="pt-3 ps-5 order-list">
+                <div className="pt-3 ps-5 me-5 order-list">
                     <table className="table table-striped table-hover">
                         <thead>
                             <tr>
@@ -29,8 +29,7 @@ const OrderListForAdmin = () => {
                         </thead>
                         <tbody>
                             {
-                            // <OrderDataRow></OrderDataRow>
-                            orderedListForAdmin?.map(orderData => <OrderDataRow orderData={orderData} key={orderData._id}></OrderDataRow>)
+                                orderedListForAdmin?.map(orderData => <OrderDataRow orderData={orderData} key={orderData._id}></OrderDataRow>)
                             }
                         </tbody>
                     </table>

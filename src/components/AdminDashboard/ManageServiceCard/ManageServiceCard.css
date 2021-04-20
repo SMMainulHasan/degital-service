@@ -1,0 +1,15 @@
+.manage-service-card{
+    background-color: lightgray;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.delete:active{
+    border: 2px solid red;
+    background: red;
+    border-radius:10px;
+}
+.delete:hover{
+    cursor: pointer;
+}

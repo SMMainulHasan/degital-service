@@ -15,7 +15,7 @@ const AddAdmin = () => {
                 body: JSON.stringify(email)
             }).then(res => {
                 if (res.status === 200) {
-                    window.alert('Service added successfully!')
+                    window.alert('Admin added successfully!')
                     reset();
                 }
                 else {
@@ -30,7 +30,7 @@ const AddAdmin = () => {
             <AdminSidebar></AdminSidebar>
             <div className="col-9 dash-right-side">
                 <h2 className="pt-5 ps-5">Add Admin</h2>
-                <div className="pt-3 ps-5 order-list">
+                <div className="pt-3 ps-5 me-5 order-list">
                     <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email">Email:</label> <br />
                         <input className="form-control" placeholder="Email" {...register("email", { required: true })} /> <br />
