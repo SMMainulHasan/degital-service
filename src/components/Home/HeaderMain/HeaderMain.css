@@ -1,18 +1,34 @@
 .banner {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
   height: 9vh;
   width: 100%;
 }
-.banner h1 {
-  font-size: 5vw;
-  font-weight: 600;
-  color: #3f3d56;
-}
+
 .banner-image img {
-  width: 100%;
+  order: 1;
+  margin-bottom: 3em;
+  width: 90%;
+  margin-left: 5%;
 }
-@media only screen and (max-width: 600px) {
-  .banner-image img {
-    width: 450px;
+
+.tag-line {
+  order: 2;
+  width: 100%;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.tag-line h1 {
+  width: 100%;
+  font-size: 2rem;
+  color: #2596be;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .tag-line {
+    order: 0;
   }
 }

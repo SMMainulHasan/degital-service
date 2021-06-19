@@ -1,22 +1,22 @@
-footer{
-    color: white;
-    padding-top: 50px;
-    background-color: #3f3d56;
+footer {
+  color: white;
+  padding-top: 50px;
+  background-color: #3f3d56;
 }
-.social-link img{
-    width: 40px;
-    margin: 0 20px 20px 20px;
+.social-link img {
+  width: 40px;
+  margin: 0 20px 20px 20px;
 }
-.copyright{
-    height: 50px;
+.copyright {
+  height: 50px;
 }
 
 @media only screen and (max-width: 600px) {
-    footer{
-        text-align: center;
-    }
-    .footer-link{
-        display: flex;
-        justify-content: center;
-    }
+  footer {
+    text-align: center;
+  }
+  .footer-link {
+    display: flex;
+    justify-content: center;
+  }
 }
